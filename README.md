@@ -11,4 +11,6 @@ Als ik een sudoku maak, kijk ik eerst naar de rijen of kolommen die het meest vo
 Ik heb ook wat CSV bestanden geupload met moeilijkere sudoku's. Evil2 duurt het langst en met de originele methode zijn er 6 miljoen 'guesses' nodig om de puzzel op te lossen.
 Na het toevoegen van de logica slechts 600K. 
 
-Ik heb enkel de logica voor de rijen en kolommen toegevoegd, ik had geen tijd meer om ook voor de blokken iets te schrijven, dus het kan nog een stuk efficienter :)
+V2:
+
+Ik heb nu ook logica toegevoegd die controleert hoeveel en welke getallen er in een blok staan. Hierdoor wordt de moeilijkste Sudoku binnen 2 seconden opgelost en met slechts 9K guesses :)
