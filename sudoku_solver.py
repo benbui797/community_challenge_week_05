@@ -5,10 +5,10 @@ import os
 def clear():
     os.system('cls')
 
-url = "https://community-challenge.netlify.app/data/sudoku2Solve.json"
-r2 = requests.get(url)
-json_file2 = r2.json()
-sudoku_solve = json_file2["sudokuSolve"]
+# url = "https://community-challenge.netlify.app/data/sudoku2Solve.json"
+# r2 = requests.get(url)
+# json_file2 = r2.json()
+# sudoku_solve = json_file2["sudokuSolve"]
 
 df_medium = pd.read_csv("sudoku_medium.csv", header=None)
 df_hard = pd.read_csv("sudoku_hard.csv", header=None)
@@ -76,12 +76,12 @@ def find_easy_cell(grid):
     # if all rows are full, return None
     if frow == None:
         return None, None, None
-    elif frow_count >= fcol_count:
+    elif frow_count <= fcol_count:
         for c in range(9):
             if grid[frow][c] == 0:
                 guesslist = find_missing(grid[frow])
                 return frow, c, guesslist   
-    elif frow_count < fcol_count:
+    elif frow_count > fcol_count:
         for r in range(9):
             if grid[r][fcol] == 0:
                 col_values = [grid[i][fcol] for i in range(9)]
@@ -174,4 +174,4 @@ def solve_start(sudoku):
     else:
         print("Could not find a solution")
 
-solve_start(sudoku_solve)
+solve_start(sudoku_hard)
